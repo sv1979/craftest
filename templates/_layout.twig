@@ -1,16 +1,32 @@
 <!doctype html>
-<html>
-<head>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     {% do view.registerCssFile("@web/assets/dist/app.css") %}
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    {% include('parts/header') %}
+
+    <main>
+        <div class="py-5">
+            <div class="container">
+                {% block content %} 
+                    MAIN CONTENT PLACEHOLDER
+                {% endblock %}
+            </div>
+        </div>
+        <div class="py-5">
+            <div class="container">
+                {% block subcontent %}{% endblock %}
+            </div>
+        </div>
+    </main>
     {% do view.registerJsFile("@web/assets/dist/app.js") %} 
-</head>
-<body>
-    <p>layout file</p>
-
-    {% block content %} 
-        MAIN CONTENT PLACEHOLDER
-    {% endblock %}
-
-    {% block subcontent %}{% endblock %}
-</body>
+  </body>
 </html>
