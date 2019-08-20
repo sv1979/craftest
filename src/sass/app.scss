@@ -1,3 +1,8 @@
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/root";
+@import "vars";
+
 body {
     background-color: #eee;
 }
@@ -8,7 +13,7 @@ body {
 }
 
 .mainHeader {
-    background-color: #fff;
+    background-color: $light;
 }
 
 .menuBox {
@@ -37,6 +42,58 @@ body {
                 color: #999;
                 text-decoration: none;
             }
+        }
+    }
+}
+
+.imgHeader {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    min-height: 40vh;
+}
+
+.iac2field {
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    .iac2image1, .iac2image2 {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+        width: 50vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        &:before {
+            content: '';
+            background-color: rgba(0,0,0,.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+    }
+    .iac2image1 {
+        right: 0;       
+    }
+    .iac2image2 {
+        left: 0;
+    }
+    .iac2inner {
+        position: relative;
+        z-index: 5;
+        padding: 3rem 0;
+        color: $light;
+    }
+    @media screen and (max-width: $breakpoint-sm) {
+        .iac2image1, .iac2image2 {
+          width: 100vw;
+          left: 0;
+          right: 0;
         }
     }
 }

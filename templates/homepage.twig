@@ -1,13 +1,20 @@
 {% extends "_layout.twig" %}
 
-{% set myEntryQuery = craft.entries()
+{% set myArticlesQuery = craft.entries()
     .section('articles')
     .orderBy('dateCreated asc')
     .limit(10) %}
-{% set articles = myEntryQuery.all() %}
+{% set articles = myArticlesQuery.all() %}
+
 
 {% block content %}
-    <h2>{{ entry.headerText }}</h2>
+    <div class="imgHeader" style="background-image:url({{entry.headerImage.first.url}})">
+        <div class="py-5">
+            <div class="container">
+                <h2>{{ entry.headerText }}</h2>
+            </div>
+        </div>
+    </div>  
 {% endblock %}
 
 {% block subcontent %}
@@ -25,4 +32,11 @@
             </h3>
         </article>
     {% endfor %}
+{% endblock %}
+
+{% block subcontent2 %}
+    {% set ic2 = entry.contentField %}
+    {% if ic2|length %}
+        {% include('parts/contentFieldOutput') with  {'data' : ic2 } %}
+    {% endif %}
 {% endblock %}

@@ -1,0 +1,27 @@
+{% for field in data %}
+    {% switch field.type %}
+        {% case 'imageAndContent2' %}
+            <div class="container-fluid iac2field">              
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="iac2image1" style="background-image:url({{field.image1.first.url}})"></div>
+                            <div class="iac2inner">
+                                <h4 class="iac2header">{{field.header1}}</h4>
+                                <div class="iac2text">{{field.text1}}</div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="iac2image2" style="background-image:url({{field.image2.first.url}})"></div>
+                            <div class="iac2inner">
+                                <h4 class="iac2header">{{field.header2}}</h4>
+                                <div class="iac2text">{{field.text2}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% default %}
+            <div>default case</div>
+    {% endswitch %}
+{% endfor %}
