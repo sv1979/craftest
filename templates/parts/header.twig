@@ -1,9 +1,11 @@
-<header>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-      <a href="#" class="navbar-brand d-flex align-items-center">
+<header class="mainHeader">
+  <div class="container">
+    <div class="menuBox">
+      <a href="#" class="mr-md-auto font-weight-normal">
         <strong>Title</strong>
       </a>
+
+      {{ craft.olivemenus.getMenuHTML('topMenu',{ 'menu-id': 'main-menu', 'menu-class': 'topMenu' }) }}
     </div>
   </div>
 </header>

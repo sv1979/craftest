@@ -1,6 +1,7 @@
 {
   "require": {
     "craftcms/cms": "^3.0.0",
+    "olivestudio/craft-olivemenus": "1.0.9",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "autoload": {

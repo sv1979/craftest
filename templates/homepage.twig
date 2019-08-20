@@ -12,7 +12,7 @@
 
 {% block subcontent %}
     {% for entry in articles %}
-        {% set rel = entry.thumbnail %}
+        {% set rel = entry.thumbnail.all() %}
         {# {{ dump(rel) }} #}
         <article>
             <h3>

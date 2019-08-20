@@ -7,3 +7,38 @@ body {
   height: auto;
 }
 
+.mainHeader {
+  background-color: #fff;
+}
+
+.menuBox {
+  display: flex;
+  align-items: center;
+}
+
+.topMenu ul {
+  list-style: none;
+  display: flex;
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.topMenu .menu-item {
+  display: inline-block;
+}
+
+.topMenu .menu-item a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 2px solid transparent;
+  transition: all 0.4s;
+}
+
+.topMenu .menu-item a:hover {
+  border-color: #999;
+  color: #999;
+  text-decoration: none;
+}
+
