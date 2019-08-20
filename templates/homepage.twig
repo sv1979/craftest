@@ -1,0 +1,28 @@
+{% extends "_layout.twig" %}
+
+{% set myEntryQuery = craft.entries()
+    .section('articles')
+    .orderBy('dateCreated asc')
+    .limit(10) %}
+{% set articles = myEntryQuery.all() %}
+
+{% block content %}
+    <h2>{{ entry.headerText }}</h2>
+{% endblock %}
+
+{% block subcontent %}
+    {% for entry in articles %}
+        {% set rel = entry.thumbnail %}
+        {# {{ dump(rel) }} #}
+        <article>
+            <h3>
+                <a href="{{ entry.url }}">
+                    {{ entry.articleTitle }} 
+                    {% for asset in rel %}
+                        <img src="{{ asset.url }}" class="thumbImage" alt="{{ asset.title }} ">
+                    {% endfor %}                    
+                </a>
+            </h3>
+        </article>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head>
+    {% do view.registerCssFile("@web/assets/dist/app.css") %}
+    {% do view.registerJsFile("@web/assets/dist/app.js") %} 
+</head>
+<body>
+    <p>layout file</p>
+
+    {% block content %} 
+        MAIN CONTENT PLACEHOLDER
+    {% endblock %}
+
+    {% block subcontent %}{% endblock %}
+</body>
+</html>

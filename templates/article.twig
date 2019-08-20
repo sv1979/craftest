@@ -1,0 +1,11 @@
+{% extends "_layout.twig" %}
+
+{% block content %}
+    <i>Article template</i>
+    <b>{{ entry.articleRating }}</b>
+    <h2>{{ entry.articleTitle }}</h2>
+
+    <div class="content">
+        {{ entry.articleText }}
+    </div>
+{% endblock %}
